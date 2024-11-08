@@ -22,7 +22,6 @@ export default function Login() {
       email: '',
       name: '',
       password: '',
-      terms: true,
     },
 
     validate: {
