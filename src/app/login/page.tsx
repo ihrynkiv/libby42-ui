@@ -10,7 +10,6 @@ import {
   Group,
   Button,
   Divider,
-  Checkbox,
   Anchor,
   Stack,
 } from '@mantine/core';
@@ -36,7 +35,7 @@ export default function Login() {
     <div style={{ width: '420px', margin: '25vh auto' }}>
       <Paper radius="md" p="xl" withBorder>
         <Text size="lg" fw={500}>
-                Welcome to Mantine, {type} with
+                Welcome to Libby42, {type} with
         </Text>
 
         <Group grow mb="md" mt="md">
@@ -61,7 +60,7 @@ export default function Login() {
             <TextInput
               required
               label="Email"
-              placeholder="hello@mantine.dev"
+              placeholder="example@libby42.com"
               value={form.values.email}
               onChange={(event) => form.setFieldValue('email', event.currentTarget.value)}
               error={form.errors.email && 'Invalid email'}
@@ -77,14 +76,6 @@ export default function Login() {
               error={form.errors.password && 'Password should include at least 6 characters'}
               radius="md"
             />
-
-            {type === 'register' && (
-              <Checkbox
-                label="I accept terms and conditions"
-                checked={form.values.terms}
-                onChange={(event) => form.setFieldValue('terms', event.currentTarget.checked)}
-              />
-            )}
           </Stack>
 
           <Group justify="space-between" mt="xl">
