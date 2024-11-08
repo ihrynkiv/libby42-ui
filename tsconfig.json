@@ -21,6 +21,7 @@
       "@app/*": ["./src/app/*"],
       "@lib/*": ["./src/lib/*"],
       "@pages/*": ["./src/pages/*"],
+      "@public/*": ["./public/*"],
     },
     "plugins": [{ "name": "next" }]
   },

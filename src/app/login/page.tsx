@@ -13,10 +13,18 @@ import {
   Anchor,
   Stack,
 } from '@mantine/core';
-import { GoogleButton } from './GoogleButton';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { GoogleButton } from './google-button';
 
 export default function Login() {
-  const [type, toggle] = useToggle(['login', 'register']);
+  const searchParams = useSearchParams();
+  const type = searchParams?.get('type') || 'login';
+  const router = useRouter();
+
+  const handleToggle = () => {
+    router.push(type === 'register' ? '/login?type=login' : '/login?type=register'); // Navigates to "/some-route"
+  };
+
   const form = useForm({
     initialValues: {
       email: '',
@@ -31,7 +39,7 @@ export default function Login() {
   });
 
   return (
-    <div style={{ width: '420px', margin: '25vh auto' }}>
+    <div style={{ width: '420px', margin: '7vh auto' }}>
       <Paper radius="md" p="xl" withBorder>
         <Text size="lg" fw={500}>
                 Welcome to Libby42, {type} with
@@ -78,11 +86,12 @@ export default function Login() {
           </Stack>
 
           <Group justify="space-between" mt="xl">
-            <Anchor component="button" type="button" c="dimmed" onClick={() => toggle()} size="xs">
+            <Anchor component="button" type="button" c="dimmed" onClick={() => handleToggle()} size="xs">
               {type === 'register'
                 ? 'Already have an account? Login'
                 : "Don't have an account? Register"}
             </Anchor>
+
             <Button type="submit" radius="xl">
               {upperFirst(type)}
             </Button>

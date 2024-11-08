@@ -2,11 +2,12 @@ import '@mantine/core/styles.css';
 
 import React from 'react';
 import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+import { MainHeader } from '@components/main-header/main-header';
 import { theme } from '../../theme';
 
 export const metadata = {
-  title: 'Mantine Next.js template',
-  description: 'I am using Mantine with Next.js!',
+  title: 'Libby42',
+  description: 'Your personal library',
 };
 
 export default function RootLayout({ children }: { children: any }) {
@@ -22,7 +23,10 @@ export default function RootLayout({ children }: { children: any }) {
         <title>Libby42</title>
       </head>
       <body>
-        <MantineProvider theme={theme}>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <MainHeader />
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 import { Anchor, Text, Title } from '@mantine/core';
-import classes from './Welcome.module.css';
+import classes from './welcome.module.css';
 
 export function Welcome() {
   return (
@@ -7,16 +7,12 @@ export function Welcome() {
       <Title className={classes.title} ta="center" mt={100}>
         Welcome to{' '}
         <Text inherit variant="gradient" component="span" gradient={{ from: 'pink', to: 'yellow' }}>
-          Mantine
+          Libby42
         </Text>
       </Title>
       <Text c="dimmed" ta="center" size="lg" maw={580} mx="auto" mt="xl">
-        This starter Next.js project includes a minimal setup for server side rendering, if you want
-        to learn more on Mantine + Next.js integration follow{' '}
-        <Anchor href="https://mantine.dev/guides/next/" size="lg">
-          this guide
-        </Anchor>
-        . To get started edit page.tsx file.
+          We are your personal library assistant. <br />
+          We help you to organize your books, track your reading progress, and discover new books.
       </Text>
     </>
   );
