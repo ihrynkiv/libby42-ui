@@ -11,5 +11,6 @@ module.exports = {
       },
     },
     'postcss-nested': {},
+    'postcss-mixins': {}
   },
 };
